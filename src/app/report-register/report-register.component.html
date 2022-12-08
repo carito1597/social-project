@@ -1,0 +1,49 @@
+<div class="center">
+  <div class="card-1">
+    <label class="title">Formulario de reporte</label>
+    <div class="cont">
+      <div class="card-2">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputEmail4" class="label-form">Problema:</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Defina su problema..."
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label class="label-form">Descripcion:</label>
+              <textarea
+                type="text"
+                class="form-control"
+                placeholder="Describa su problema..."
+              ></textarea>
+            </div>
+            <div class="form-group mt-3">
+              <label class="label-form">Ingresar imagen (opcional):</label>
+              <input
+              class="form-control"
+              type="file"
+              (change)="onChange($event)"
+              /> 
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-2">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputEmail4" class="label-form">Problema:</label>
+             
+              
+            </div>
+          </div>
+          <button type="submit" class="btn btn-pink mt-3">Mandar reporte</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

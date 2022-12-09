@@ -6,14 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./report-register.component.css']
 })
 export class ReportRegisterComponent implements OnInit {
-
-  checkoutForm: any;
+  display: any;
+  center: google.maps.LatLngLiteral = {
+    lat: -17.373180, 
+    lng: -66.147378
+  };
+  zoom = 16;
+  marker = {
+    position: { lat: -17.373180, 
+      lng: -66.147378 },
+ }
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){}
+  onSubmit() { }
 
-  onChange(event: any){}
+  onChange(event: any) { }
+
+
+  clickOnMap(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null){
+      // this.center = (event.latLng.toJSON());
+      this.marker.position = (event.latLng.toJSON());
+      console.log(this.marker)
+    } 
+  }
 }

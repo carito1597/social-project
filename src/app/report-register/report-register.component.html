@@ -24,10 +24,10 @@
             <div class="form-group mt-3">
               <label class="label-form">Ingresar imagen (opcional):</label>
               <input
-              class="form-control"
-              type="file"
-              (change)="onChange($event)"
-              /> 
+                class="form-control"
+                type="file"
+                (change)="onChange($event)"
+              />
             </div>
           </div>
         </form>
@@ -37,11 +37,20 @@
           <div class="form-row">
             <div class="form-group">
               <label for="inputEmail4" class="label-form">Problema:</label>
-             
-              
+              <google-map
+                height="350px"
+                width="auto"
+                [center]="center"
+                [zoom]="zoom"
+                (mapClick)="clickOnMap($event)"
+              >
+                <map-marker [position]="marker.position"></map-marker>
+              </google-map>
             </div>
           </div>
-          <button type="submit" class="btn btn-pink mt-3">Mandar reporte</button>
+          <button type="submit" class="btn btn-pink mt-3">
+            Mandar reporte
+          </button>
         </form>
       </div>
     </div>

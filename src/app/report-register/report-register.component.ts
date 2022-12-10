@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-report-register',
@@ -16,7 +17,10 @@ export class ReportRegisterComponent implements OnInit {
     position: { lat: -17.373180, 
       lng: -66.147378 },
  }
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router 
+  ) { }
 
   ngOnInit(): void {
   }
@@ -32,5 +36,9 @@ export class ReportRegisterComponent implements OnInit {
       this.marker.position = (event.latLng.toJSON());
       console.log(this.marker)
     } 
+  }
+
+  goContact(){
+    this.router.navigate(['items'], { relativeTo: this.route });
   }
 }

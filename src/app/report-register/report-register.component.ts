@@ -39,6 +39,11 @@ export class ReportRegisterComponent implements OnInit {
   }
 
   goContact(){
-    this.router.navigate(['items'], { relativeTo: this.route });
+    console.log('asdfa')
+    this.router.navigate(['contact']);
+  }
+
+  goReportList(){
+    this.router.navigate(['report-list']);
   }
 }

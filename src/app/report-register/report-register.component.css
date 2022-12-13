@@ -1,4 +1,4 @@
-.center {
+/* .center {
   position: absolute;
   left: 0;
   right: 0;
@@ -9,7 +9,7 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-}
+} */
 
 .card-1 {
   background: rgba(0, 0, 0, 0.4);
@@ -33,7 +33,6 @@
 .title {
   color: aliceblue;
   font-size: xx-large;
-  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
 }
 
 .label-form {
@@ -66,8 +65,4 @@
     flex-direction: column;
     }
   
-}
-
-.navbar {
-  background-color: #49C0DF;
 }

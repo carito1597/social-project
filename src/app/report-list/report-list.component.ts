@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Report } from '../models/report';
 import { ReportsService } from '../services/reports.service';
 
@@ -13,8 +12,6 @@ export class ReportListComponent {
   reports: Report[] = [];
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
     private reportService: ReportsService
   ) {
     this.getReports();
@@ -25,17 +22,5 @@ export class ReportListComponent {
     .subscribe((data: Report[]) => {
       this.reports = data;
     })
-  }
-
-  goContact() {
-    this.router.navigate(['contact']);
-  }
-
-  goReportRegister() {
-    this.router.navigate(['report-register']);
-  }
-
-  goReportList() {
-    this.router.navigate(['report-list']);
   }
 }

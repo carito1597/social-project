@@ -49,13 +49,4 @@ export class ReportRegisterComponent implements OnInit {
       this.report.longitude = this.marker.position.lng.toString();
     }
   }
-
-  goContact() {
-    console.log('asdfa')
-    this.router.navigate(['contact']);
-  }
-
-  goReportList() {
-    this.router.navigate(['report-list']);
-  }
 }

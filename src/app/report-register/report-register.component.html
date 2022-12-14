@@ -1,78 +1,37 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" >
-    <img src="./assets/img/logo-cocha.png" height="40" alt="">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link label-form">Realizar reporte</a>
-      </li>
-      <li class="nav-item" (click)="goReportList()">
-        <a class="nav-link label-form">Lista de reportes</a>
-      </li>
-      <li class="nav-item" (click)="goContact()">
-        <a class="nav-link label-form" >Contacto</a>
-      </li>
-    </ul>
-  </div>
-</nav> -->
 <div class="center">
   <div class="card-1">
     <label class="title">Formulario de reporte</label>
     <div class="cont">
       <div class="card-2">
-        <form>
           <div class="form-row">
             <div class="form-group">
               <label for="inputEmail4" class="label-form">Problema:</label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Defina su problema..."
-              />
+              <input type="text" name="problem" [(ngModel)]="report.problem" class="form-control"
+                placeholder="Defina su problema..." />
             </div>
             <div class="form-group mt-3">
               <label class="label-form">Descripcion:</label>
-              <textarea
-                type="text"
-                class="form-control"
-                placeholder="Describa su problema..."
-              ></textarea>
+              <textarea type="text" name="description" [(ngModel)]="report.description" class="form-control"
+                placeholder="Describa su problema..."></textarea>
             </div>
             <div class="form-group mt-3">
               <label class="label-form">Ingresar imagen (opcional):</label>
-              <input
-                class="form-control"
-                type="file"
-                (change)="onChange($event)"
-              />
+              <input class="form-control" type="file" (change)="onChange($event)" />
             </div>
           </div>
-        </form>
       </div>
       <div class="card-2">
-        <form>
           <div class="form-row">
             <div class="form-group">
               <label for="inputEmail4" class="label-form">Problema:</label>
-              <google-map
-                height="350px"
-                width="auto"
-                [center]="center"
-                [zoom]="zoom"
-                (mapClick)="clickOnMap($event)"
-              >
+              <google-map height="350px" width="auto" [center]="center" [zoom]="zoom" (mapClick)="clickOnMap($event)">
                 <map-marker [position]="marker.position"></map-marker>
               </google-map>
             </div>
           </div>
-          <button type="submit" class="btn btn-pink mt-3">
+          <button type="submit" (click)="onSubmit()" class="btn btn-pink mt-3">
             Mandar reporte
           </button>
-        </form>
       </div>
     </div>
   </div>

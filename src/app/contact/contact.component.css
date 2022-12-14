@@ -1,0 +1,29 @@
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+  }
+
+.back-card {
+    background: rgba(69, 185, 75, 0.5);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .background-violet{
+    background-color: #482778;
+  }

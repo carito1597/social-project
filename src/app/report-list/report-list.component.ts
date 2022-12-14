@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Report } from '../models/report';
+import { ReportsService } from '../services/reports.service';
 
 @Component({
   selector: 'app-report-list',
@@ -8,13 +10,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ReportListComponent {
 
+  reports: Report[] = [];
+
   constructor(
     private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private router: Router,
+    private reportService: ReportsService
+  ) {
+    this.getReports();
+  }
+
+  getReports(){
+    this.reportService.getReports()
+    .subscribe((data: Report[]) => {
+      this.reports = data;
+    })
+  }
 
   goContact() {
-    console.log('asdfa')
     this.router.navigate(['contact']);
   }
 

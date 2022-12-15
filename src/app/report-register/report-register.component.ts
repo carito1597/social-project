@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Report } from '../models/report';
 import { ReportsService } from '../services/reports.service';
+const ZOOM = 16;
 
 @Component({
   selector: 'app-report-register',
@@ -9,12 +10,11 @@ import { ReportsService } from '../services/reports.service';
   styleUrls: ['./report-register.component.css']
 })
 export class ReportRegisterComponent implements OnInit {
-  display: any;
   center: google.maps.LatLngLiteral = {
     lat: -17.373180,
     lng: -66.147378
   };
-  zoom = 16;
+  zoom = ZOOM;
   marker = {
     position: {
       lat: -17.373180,
@@ -35,7 +35,7 @@ export class ReportRegisterComponent implements OnInit {
   onSubmit() {
     this.reportService.postReports(this.report)
     .subscribe(data =>{
-      console.log(data);
+      this.goReportList();
     })
   }
 
@@ -48,5 +48,9 @@ export class ReportRegisterComponent implements OnInit {
       this.report.latitude = this.marker.position.lat.toString();
       this.report.longitude = this.marker.position.lng.toString();
     }
+  }
+
+  goReportList(){
+    this.router.navigate(['report-list']);
   }
 }

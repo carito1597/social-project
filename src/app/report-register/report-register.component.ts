@@ -33,6 +33,7 @@ export class ReportRegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    this.report.img_url = "https://quintafuerzamx.s3.us-east-2.amazonaws.com/Leopard/uploads/2022/05/fuertes-vientos-cdmx-caida-de-arboles-y-servicio-lento-en-cablebus-162456-696x392.jpg"
     this.reportService.postReports(this.report)
     .subscribe(data =>{
       this.goReportList();

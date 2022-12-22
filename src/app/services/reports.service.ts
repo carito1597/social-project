@@ -17,11 +17,11 @@ export class ReportsService {
     return this.http.get<Report[]>(this.api_url);
   }
 
-  patch(data: any){
+  patch(data: Report){
     return this.http.patch(this.api_url, data);
   }
 
-  postReports(data: any){
+  postReports(data: Report){
     return this.http.post(this.api_url, data);
   }
 }

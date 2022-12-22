@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+ // api_url: 'http://localhost:3000/', //api nestjs
+  // api_url: 'http://localhost:5077' //api .net
+  api_key: 'AIzaSyC1OQAS1DvjpFk6PfQ42Htm2sCht6MZIBw',
+  api_url: 'https://social-project-api-carolina.herokuapp.com/'
 };
 
 /*

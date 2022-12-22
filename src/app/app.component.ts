@@ -24,4 +24,11 @@ export class AppComponent {
   goReportRegister(){
     this.router.navigate(['report-register']);
   }
+
+  show:boolean = false;
+
+  toggleCollapse() {
+    this.show = !this.show
+    console.log(this.show)
+  }
 }

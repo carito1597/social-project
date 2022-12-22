@@ -29,6 +29,5 @@ export class AppComponent {
 
   toggleCollapse() {
     this.show = !this.show
-    console.log(this.show)
   }
 }

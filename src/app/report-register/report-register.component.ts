@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Report } from '../models/report';
 import { ReportsService } from '../services/reports.service';
 const ZOOM = 16;
@@ -26,13 +27,20 @@ export class ReportRegisterComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private reportService: ReportsService
+    private reportService: ReportsService,
+    private toastrService:ToastrService
   ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
+    if(this.report.problem.length==0 || this.report.description.length==0){
+      this.toastrService.error("No deje espacios en blanco","Error",{
+        positionClass: 'toast-top-center',
+      })
+      return
+    }
     this.report.img_url = "https://quintafuerzamx.s3.us-east-2.amazonaws.com/Leopard/uploads/2022/05/fuertes-vientos-cdmx-caida-de-arboles-y-servicio-lento-en-cablebus-162456-696x392.jpg"
     this.reportService.postReports(this.report)
     .subscribe(data =>{

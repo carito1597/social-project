@@ -1,0 +1,38 @@
+<div class="center">
+  <div class="card-1">
+    <label class="title">Formulario de reporte</label>
+    <div class="cont">
+      <div class="card-2">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputEmail4" class="label-form">Problema:</label>
+              <input type="text" name="problem" [(ngModel)]="report.problem" class="form-control"
+                placeholder="Defina su problema..." />
+            </div>
+            <div class="form-group mt-3">
+              <label class="label-form">Descripcion:</label>
+              <textarea type="text" name="description" [(ngModel)]="report.description" class="form-control"
+                placeholder="Describa su problema..."></textarea>
+            </div>
+            <div class="form-group mt-3">
+              <label class="label-form">Ingresar imagen (opcional):</label>
+              <input class="form-control" type="file" (change)="onChange($event)" />
+            </div>
+          </div>
+      </div>
+      <div class="card-2">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputEmail4" class="label-form">Problema:</label>
+              <google-map height="350px" width="auto" [center]="center" [zoom]="zoom" (mapClick)="clickOnMap($event)">
+                <map-marker [position]="marker.position"></map-marker>
+              </google-map>
+            </div>
+          </div>
+          <button type="submit" (click)="onSubmit()" class="btn btn-pink mt-3">
+            Mandar reporte
+          </button>
+      </div>
+    </div>
+  </div>
+</div>

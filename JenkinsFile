@@ -15,11 +15,11 @@ pipeline {
             steps
             {
                 git 'https://github.com/carito1597/social-project.git'
-                bat 'npm install'
-                dir('/src')
-                {
+                //bat 'npm install'
+               // dir('/src')
+               // {
                 // some block
-                }
+               // }
             }
         }
     }

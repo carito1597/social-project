@@ -44,7 +44,7 @@ pipeline {
 
                 git 'https://github.com/carito1597/social-project.git'
 
-                //sh 'npm install'
+                bat 'npm install'
 
                 dir('/src')
 
